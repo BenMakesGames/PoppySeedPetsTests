@@ -27,7 +27,7 @@ describe('Test signup', function() {
     });
 
     it('can complete introduction dialog', async () => {
-        const firstDialogOption = await page.waitFor('main .dialog-choices > li:first-child > a');
+        const firstDialogOption = await page.waitFor('main .dialog-choices > li:first-child > button');
 
         await firstDialogOption.click();
 
