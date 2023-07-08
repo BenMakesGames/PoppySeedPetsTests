@@ -9,10 +9,9 @@
   "author": "Ben Hendel-Doying",
   "license": "ISC",
   "dependencies": {
-    "@types/chai": "^4.2.11",
-    "@types/puppeteer": "^3.0.0",
-    "chai": "^4.2.0",
-    "puppeteer": "^4.0.1",
-    "uuid": "^8.2.0"
+    "@types/chai": "^4.3.5",
+    "chai": "^4.3.7",
+    "puppeteer": "^20.8.0",
+    "uuid": "^9.0.0"
   }
 }

@@ -19,7 +19,7 @@ describe('Test signup', function() {
     });
 
     it('sign up button should work', async () => {
-        const registerButton = await page.waitFor('a[href="/register"]');
+        const registerButton = await page.waitForSelector('a[href="/register"]');
 
         await registerButton.click();
 
@@ -27,7 +27,7 @@ describe('Test signup', function() {
     });
 
     it('can complete introduction dialog', async () => {
-        const firstDialogOption = await page.waitFor('main .dialog-choices > li:first-child > button');
+        const firstDialogOption = await page.waitForSelector('main .dialog-choices > li:first-child > button');
 
         await firstDialogOption.click();
 
@@ -39,7 +39,7 @@ describe('Test signup', function() {
 
         await page.keyboard.type('Test User');
 
-        const nextButton = await page.waitFor('[data-test-step="2"] button[type="submit"]');
+        const nextButton = await page.waitForSelector('[data-test-step="2"] button[type="submit"]');
 
         await nextButton.click();
 
@@ -47,7 +47,7 @@ describe('Test signup', function() {
     });
 
     it('can select pet', async () => {
-        const nextButton = await page.waitFor('[data-test-step="3"] button[type="submit"]');
+        const nextButton = await page.waitForSelector('[data-test-step="3"] button[type="submit"]');
 
         await nextButton.click();
 
@@ -59,7 +59,7 @@ describe('Test signup', function() {
 
         await page.keyboard.type('Test Pet');
 
-        const nextButton = await page.waitFor('[data-test-step="4"] button[type="submit"]');
+        const nextButton = await page.waitForSelector('[data-test-step="4"] button[type="submit"]');
 
         await nextButton.click();
 
@@ -82,12 +82,12 @@ describe('Test signup', function() {
             await checkBox.click();
 
         // next!
-        const nextButton = await page.waitFor('[data-test-step="5"] button[type="submit"]');
+        const nextButton = await page.waitForSelector('[data-test-step="5"] button[type="submit"]');
 
         await nextButton.click();
     });
 
     it('is logged in, at home', async () => {
-        await page.waitFor('app-loading-throbber[text="Loading pets"]');
+        await page.waitForSelector('app-loading-throbber[text="Loading pets"]');
     });
 });
