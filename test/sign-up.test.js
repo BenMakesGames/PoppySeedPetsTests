@@ -9,9 +9,11 @@ describe('Test signup', function() {
     let page;
 
     before(async () => {
-        browser = await puppeteer.launch();
+        browser = await puppeteer.launch({
+            ignoreHTTPSErrors: true
+        });
         page = await browser.newPage();
-        await page.goto('http://localhost:4200');
+        await page.goto('https://localhost:4200');
     });
 
     after(async () => {
