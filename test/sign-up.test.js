@@ -10,7 +10,7 @@ describe('Test signup', function() {
 
     before(async () => {
         browser = await puppeteer.launch({
-            ignoreHTTPSErrors: true
+            args: ["--ignore-certificate-errors"]
         });
         page = await browser.newPage();
         await page.goto('https://localhost:4200');
